@@ -1,6 +1,6 @@
 class CounterCalorieConstants {
   // todo look the nums real
-  static const constantWomen = 655;
+  static const constantWoman = 655;
   static const constantMen = 55;
   static const ageWomen = 4;
   static const ageMan = 5;

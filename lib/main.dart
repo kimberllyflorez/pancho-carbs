@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/data_user/provider/get_data_user.dart';
+import 'package:projects_study/data_user/provider/get_data_provider.dart';
 import 'package:projects_study/data_user/ui/pages/pages.dart';
 import 'package:projects_study/home/ui/pages/home_pg.dart';
 import 'package:provider/provider.dart';

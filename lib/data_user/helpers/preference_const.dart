@@ -8,9 +8,9 @@ class PreferenceConst {
 
   //TODO  ASOCIATED const activity with map activity.
   static const Map<int, double> activityLabel = {
-    0: 1,
-    1: 2,
-    2: 3,
+    0: 10,
+    1: 0,
+    2: 30,
   };
 
 }
