@@ -1,7 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:projects_study/data_user/calculation_ecuation/calculate_calorie.dart';
+import 'package:projects_study/data_user/calculation_ecuation/user_data.dart';
 
 class GetDataUser extends ChangeNotifier{
-//TODO: send events and changer in dsts user in here
-//TODO: created funtion clean, add, delete.
+GetDataUser(){
+  userInformation;
+}
+final userInformation =  UserRepository().getUser();
+final calUser = CalculateCalorie();
 }

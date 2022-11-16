@@ -4,24 +4,6 @@ import 'package:projects_study/data_user/model/user_data_model.dart';
 
 
 class UserRepository {
-  /*double final double height;
-  final double weight;
-  final int age;
-  final Gender gener;
-
-  const UserData({
-  required this.height,
-  required this.weight,
-})
-
-  userData(){
-    getHeight();
-    getWeight();
-    getAge();
-    getGender();
-  }
-*/
-  UserRepository();
 
   Future<UserDataModel> getUser() async {
     double height = await getHeight();
@@ -29,7 +11,13 @@ class UserRepository {
     int age = await getAge();
     int activity = await getLevelActivity();
     //Gender gender = await getGender().
-    return getUser();
+    return UserDataModel(
+      age: age,
+      weight: weight,
+      height: height,
+      activityLevel: activity
+
+    );
   }
 
   Future<double> getHeight() async {

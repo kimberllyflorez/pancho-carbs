@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projects_study/home/ui/widget/custom_background.dart';
+import 'package:projects_study/pallete/palette.dart';
 
 class HomePg extends StatelessWidget {
   const HomePg({Key? key}) : super(key: key);
@@ -8,39 +10,10 @@ class HomePg extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: const [
-          Statistics(),
-          Statistics(),
+          CustomBackGround(),
         ],
       ),
     );
   }
 }
 
-class Statistics extends StatelessWidget {
-  const Statistics({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
-        ),
-      ),
-      child: Column(
-        children: [
-           Container(
-            height: 100,
-            child: const Text(''),
-          ),
-          const Text('this is the top '),
-        ],
-      ),
-    );
-  }
-}
