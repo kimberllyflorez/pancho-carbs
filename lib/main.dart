@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         backgroundColor: Colors.white10,
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.grey,
       ),
       home: const FirstWelcomePg(),
       routes: {

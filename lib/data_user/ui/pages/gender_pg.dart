@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
+import 'package:projects_study/data_user/ui/widgets/welcom_custom_appbar.dart';
 import 'package:projects_study/utils/gender.dart';
-
-
 
 class GenderPg extends StatefulWidget {
   const GenderPg({
@@ -27,14 +26,11 @@ class _GenderPgState extends State<GenderPg> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            'Please select your gender',
-            style: TextStyle(
-              fontSize: 30,
-            ),
+          CustomAppBar(
+            question: 'Please, select your gender',
           ),
+          SizedBox(height: 20,),
           SelectButtonWd(
             nameButton: 'Women',
             funtion: () => selectGender(
@@ -55,7 +51,7 @@ class _GenderPgState extends State<GenderPg> {
   }
 
   Future<void> selectGender(Gender gender) async {
-    
+    print(gender.index);
     Navigator.pushNamed(context, 'activity');
     await PreferenceUtils.setString(PreferenceConst.gender, gender.name);
     setState(() {

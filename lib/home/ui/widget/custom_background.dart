@@ -1,29 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/pallete/palette.dart';
+import 'package:projects_study/palete/palette.dart';
 
-class CustomBackGround extends StatelessWidget {
+class HomeBackGround extends StatelessWidget {
+  final List<Widget> widgets;
 
-
-  const CustomBackGround({
-  Key? key,
+  const HomeBackGround({
+    Key? key,
+    required this.widgets,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-  return ClipPath(
-  child: Container(
-  alignment: Alignment.center,
-  child: Stack(
-  children: [
+    return Column(
+      children: [
+        ClipPath(
+          clipper: CustomClipPath(),
+          child: Container(
+            alignment: Alignment.center,
+            color: Palette.primary,
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.7,
+            child: Stack(
+            alignment: AlignmentDirectional.bottomCenter,
+              children: widgets,
+            ),
+          ),
+        ),
+        buttonNavigator()
+      ],
+    );
+  }
+}
 
-  ],
-  ),
-  color: Palette.primary,
-  width: double.infinity,
-  height: MediaQuery.of(context).size.height * 0.7,
-  ),
-  clipper: CustomClipPath(),
-  );
+class buttonNavigator extends StatelessWidget {
+  const buttonNavigator({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: [
+          Icon(Icons.circle),
+          Icon(Icons.circle),
+
+        ],
+      ),
+    );
   }
 }
 

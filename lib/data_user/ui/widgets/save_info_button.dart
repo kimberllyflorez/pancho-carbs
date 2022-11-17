@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects_study/palete/palette.dart';
 
 class SaveInfoButton extends StatelessWidget {
   final String? textButton;
@@ -16,7 +17,7 @@ class SaveInfoButton extends StatelessWidget {
       onPressed: function,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.purpleAccent,
+          color: Palette.gray,
           borderRadius: BorderRadius.circular(10.0),
         ),
         padding: const EdgeInsets.all(6),

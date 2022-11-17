@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
+import 'package:projects_study/data_user/ui/widgets/appbar_question_datauser.dart';
+
+import 'package:projects_study/palete/palette.dart';
 
 class AgePg extends StatefulWidget {
   const AgePg({super.key});
@@ -28,23 +31,32 @@ class _AgePgState extends State<AgePg> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        body: SingleChildScrollView(
+      child: Column(
         children: [
-          InputTextWd(
-            questionPg: 'What is your age',
-            controllerData: ageController,
-            keyValue: ageController.text,
-            hintText: 'input your age',
-            validate: [LengthLimitingTextInputFormatter(3)],
+         const CustomBackGround(
+            question: ' What is your \n age',
           ),
-          SaveInfoButton(
-            textButton: 'Save Data',
-            function: () => Navigator.pushNamed(context, 'weightPg'),
-          )
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InputTextWd(
+                controllerData: ageController,
+                keyValue: ageController.text,
+                hintText: 'input your age',
+                validate: [
+                  LengthLimitingTextInputFormatter(3),
+                ],
+              ),
+              SaveInfoButton(
+                textButton: 'Save Data',
+                function: () => Navigator.pushNamed(context, 'weightPg'),
+              )
+            ],
+          ),
         ],
       ),
-    );
+    ));
   }
 
   void saveAge(String key, String value) async {

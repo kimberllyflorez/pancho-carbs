@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
+import 'package:projects_study/palete/palette.dart';
 
 class InputTextWd extends StatelessWidget {
-  final String questionPg;
+  final String? questionPg;
   final TextEditingController? controllerData;
   final String? keyValue;
   final String? hintText;
@@ -15,7 +16,7 @@ class InputTextWd extends StatelessWidget {
     this.keyValue,
     this.hintText,
     this.validate,
-    required this.questionPg,
+     this.questionPg,
   }) : super(key: key);
 
   @override
@@ -24,12 +25,13 @@ class InputTextWd extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          questionPg,
+          questionPg ?? ' ',
           style: const TextStyle(
             fontSize: 30,
           ),
         ),
         Container(
+          color: Palette.write,
           padding: const EdgeInsets.only(
             left: 12.0,
             right: 12.0,
@@ -39,8 +41,10 @@ class InputTextWd extends StatelessWidget {
             top: 8.0,
           ),
           child: TextFormField(
+
             decoration: InputDecoration(
-              border: const OutlineInputBorder(),
+              border: const OutlineInputBorder(
+              ),
               hintText: hintText,
             ),
             textAlign: TextAlign.center,
