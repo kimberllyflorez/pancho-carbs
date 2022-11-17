@@ -1,5 +1,5 @@
 
-import '../data_user/ui/pages/gender_pg.dart';
+import 'package:projects_study/utils/gender.dart';
 
 extension GenderString on String {
   Gender get gender {

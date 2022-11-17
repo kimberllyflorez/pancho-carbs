@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
+import 'package:projects_study/utils/gender.dart';
 
-enum Gender {
-  woman,
-  man,
-  none,
-}
+
 
 class GenderPg extends StatefulWidget {
   const GenderPg({
@@ -58,6 +55,7 @@ class _GenderPgState extends State<GenderPg> {
   }
 
   Future<void> selectGender(Gender gender) async {
+    
     Navigator.pushNamed(context, 'activity');
     await PreferenceUtils.setString(PreferenceConst.gender, gender.name);
     setState(() {

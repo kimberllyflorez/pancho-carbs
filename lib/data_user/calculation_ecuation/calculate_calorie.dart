@@ -1,6 +1,5 @@
 import 'package:projects_study/data_user/calculation_ecuation/user_data.dart';
-import 'package:projects_study/data_user/ui/pages/gender_pg.dart';
-
+import 'package:projects_study/utils/gender.dart';
 
 import 'constant_ecuation.dart';
 
