@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palete/palette.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class CustomBackGround extends StatelessWidget {
-  final List<Widget>? widgets;
+  final List<Widget> widgets;
   final String? question;
 
   const CustomBackGround({
 
-    Key? key,  this.widgets, this.question,
+    Key? key, required this.widgets, this.question,
   }) : super(key: key);
 
   @override
@@ -18,20 +18,8 @@ class CustomBackGround extends StatelessWidget {
         alignment: Alignment.center,
         color: Palette.primary,
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.7,
         child: Stack(
-            children: [
-
-              Text(
-                question ??
-                ' ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 36,
-                  color: Palette.write,
-                ),
-              )
-            ]
+            children: widgets
         ),
       ),
     );

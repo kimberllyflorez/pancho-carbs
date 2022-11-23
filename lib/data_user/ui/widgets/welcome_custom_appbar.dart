@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palete/palette.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String? question;
+  final double? topPadding;
+  final double? bottomPadding;
   const CustomAppBar({
-    Key? key,  this.question,
+    Key? key,
+    this.question,
+    this.topPadding,
+    this.bottomPadding,
   }) : super(key: key);
 
   @override
@@ -14,14 +19,20 @@ class CustomAppBar extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.3,
         color: Palette.primary,
-        child: Text(
-          question ??
-          'WELCOME TO  \n CALORIE COUNTER ',
-          style: TextStyle(
-              color: Palette.write, fontSize: 26, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
+        child: Padding(
+          padding:  EdgeInsets.only(
+            top:topPadding ?? 60.0,
+            bottom: bottomPadding ?? 40.0,
+          ),
+          child: Text(
+            question ??
+            'WELCOME TO \n CALORIE COUNTER ',
+            style: TextStyle(
+                color: Palette.write, fontSize: 26,
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );
@@ -33,7 +44,8 @@ class CustomClipPath extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
     path.lineTo(0, size.height / 3);
-    path.cubicTo((size.width / 5), 3 * (size.height / 2), 2 * (size.width / 3),
+    path.cubicTo((size.width / 5),
+        3 * (size.height / 2), 2 * (size.width / 3),
         size.height / 2, size.width, size.height * 0.9);
 
     path.lineTo(size.width, 0);
