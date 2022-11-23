@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palete/palette.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class HomeBackGround extends StatelessWidget {
   final List<Widget> widgets;
@@ -26,30 +26,12 @@ class HomeBackGround extends StatelessWidget {
             ),
           ),
         ),
-        buttonNavigator()
+
       ],
     );
   }
 }
 
-class buttonNavigator extends StatelessWidget {
-  const buttonNavigator({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Icon(Icons.circle),
-          Icon(Icons.circle),
-
-        ],
-      ),
-    );
-  }
-}
 
 class CustomClipPath extends CustomClipper<Path> {
   @override
@@ -58,7 +40,7 @@ class CustomClipPath extends CustomClipper<Path> {
     path.lineTo(0, size.height / 1.5);
 
     path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height / 1.5);
+        size.width / 2, size.height/2, size.width, size.height / 1.5);
     path.lineTo(size.width, 0);
     //path.moveTo(size.width, 0);
 
