@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palete/palette.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class SelectButtonWd extends StatelessWidget {
   final String nameButton;
-  final Function()? funtion;
+  final Function()? function;
   final bool select;
 
 
   const SelectButtonWd({
     Key? key,
-    required this.nameButton,
     this.select = false,
-    this.funtion,
-
+    this.function,
+    required this.nameButton,
 
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,7 @@ class SelectButtonWd extends StatelessWidget {
       child: MaterialButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         splashColor: Palette.primary,
-        color: select ? Palette.primary: Colors.white10,
+        color: select ? Palette.primary : Colors.white10,
         onPressed: change,
         //select = !select;
         //setState(() {});
@@ -45,12 +43,10 @@ class SelectButtonWd extends StatelessWidget {
     );
   }
 
-  change(){
-    final change = funtion;
-    if(change != null ){
+  change() {
+    final change = function;
+    if (change != null) {
       change();
     }
   }
-
-
 }

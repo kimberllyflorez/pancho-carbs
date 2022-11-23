@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
-import 'package:projects_study/data_user/ui/widgets/welcom_custom_appbar.dart';
+import 'package:projects_study/data_user/ui/widgets/popup_validated.dart';
+import 'package:projects_study/data_user/ui/widgets/welcome_custom_appbar.dart';
 import 'package:projects_study/utils/gender.dart';
 
 class GenderPg extends StatefulWidget {
@@ -27,23 +28,28 @@ class _GenderPgState extends State<GenderPg> {
     return Scaffold(
       body: Column(
         children: [
-          CustomAppBar(
+          const CustomAppBar(
+            topPadding: 100,
+            bottomPadding: 100,
             question: 'Please, select your gender',
           ),
-          SizedBox(height: 20,),
+          Expanded(child: Container()),
           SelectButtonWd(
             nameButton: 'Women',
-            funtion: () => selectGender(
+            function: () => selectGender(
               Gender.woman,
             ),
             select: value == Gender.woman,
           ),
           SelectButtonWd(
             nameButton: 'man',
-            funtion: () => selectGender(
+            function: () => selectGender(
               Gender.man,
             ),
             select: value == Gender.man,
+          ),
+          Expanded(
+            child: Container(),
           ),
         ],
       ),
@@ -51,9 +57,19 @@ class _GenderPgState extends State<GenderPg> {
   }
 
   Future<void> selectGender(Gender gender) async {
+
     print(gender.index);
-    Navigator.pushNamed(context, 'activity');
     await PreferenceUtils.setString(PreferenceConst.gender, gender.name);
+
+    if (gender == Gender.none ) {
+      const ValidatedData(
+        messageTitle: 'Gender',
+        messageSubtitle: 'please, double check to gender',
+      );
+    }else{
+      Navigator.pushNamed(context, 'activity');
+
+    }
     setState(() {
       value = gender;
     });

@@ -1,43 +1,43 @@
-
 import 'package:projects_study/utils/gender.dart';
 
 class UserDataModel {
-
-  final double weight;
-  final Gender gender;
-  final double height;
   final int age;
   final int activityLevel;
-  final int goalWeight;
+  final Gender gender;
+  final double height;
+  final double weight;
+  final double? calories;
 
+  //final int goalWeight;
 
   UserDataModel({
-    this.weight = 0.0,
-    this.gender = Gender.none,
-    this.height = 0.0,
-    this.age = 0,
-    this.activityLevel = 0,
-    this.goalWeight = 0,
+      this.gender = Gender.none,
+      required this.weight,
+      required this.height,
+      required this.age,
+      required this.activityLevel,
+       this.calories
+      //required this.goalWeight ,
 
-  });
+      });
 
   factory UserDataModel.fromMap(Map<String, dynamic> json) => UserDataModel(
-    weight: json["weight"],
-    gender: json["gender"],
-    height: json["height"],
-    age: json["age"],
-    activityLevel: json["activity_level"],
-    goalWeight: json["goal_weight"],
-
-  );
+      weight: json["weight"],
+      gender: json["gender"],
+      height: json["height"],
+      age: json["age"],
+      activityLevel: json["activity_level"],
+      calories: json["calorie"]
+      //goalWeight: json["goal_weight"],
+      );
 
   Map<String, dynamic> toMap() => {
-    "weight": weight,
-    "gender":  gender,
-    "height": height,
-    "age": age,
-    "activity_level": activityLevel,
-    "goal_weight": goalWeight,
-
-  };
+        "weight": weight,
+        "height": height,
+        "gender": gender,
+        "age": age,
+        "activity_level": activityLevel,
+        "calories": calories,
+        //"goal_weight": goalWeight,
+      };
 }

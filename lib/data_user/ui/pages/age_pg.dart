@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
-import 'package:projects_study/data_user/ui/widgets/appbar_question_datauser.dart';
+import 'package:projects_study/data_user/ui/widgets/appbar_question_wd.dart';
 
-import 'package:projects_study/palete/palette.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class AgePg extends StatefulWidget {
   const AgePg({super.key});
@@ -17,7 +17,7 @@ class _AgePgState extends State<AgePg> {
 
   @override
   void initState() {
-    ageController = TextEditingController(text: '');
+    ageController = TextEditingController();
     super.initState();
   }
 
@@ -34,8 +34,20 @@ class _AgePgState extends State<AgePg> {
         body: SingleChildScrollView(
       child: Column(
         children: [
-         const CustomBackGround(
-            question: ' What is your \n age',
+          CustomBackGround(
+            widgets: [
+              Padding(
+                padding: const EdgeInsets.only(top: 100, bottom: 120),
+                child: Text(
+                  ' What is your \n age',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 36,
+                    color: Palette.write,
+                  ),
+                ),
+              )
+            ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +62,8 @@ class _AgePgState extends State<AgePg> {
               ),
               SaveInfoButton(
                 textButton: 'Save Data',
-                function: () => Navigator.pushNamed(context, 'weightPg'),
+                function: () =>
+                    saveAge(PreferenceConst.age, ageController.text),
               )
             ],
           ),
@@ -59,7 +72,30 @@ class _AgePgState extends State<AgePg> {
     ));
   }
 
-  void saveAge(String key, String value) async {
+  Future<void> saveAge(String key, String value) async {
     await PreferenceUtils.setString(key, value);
+    print('age: ${ageController.text}');
+
+    final age = int.tryParse(ageController.text);
+
+    if (age == null) {
+      showDialog<void>(
+        context: context,
+        builder: (BuildContext context) => const ValidatedData(
+          messageSubtitle: 'enter your age',
+        ),
+      );
+    } else if (age <= 18 || age >= 100) {
+      showDialog<void>(
+        context: context,
+        builder: (BuildContext context) => const ValidatedData(
+          messageSubtitle: 'please validated your age ',
+        ),
+      );
+    } else {
+      //todo: review
+      Navigator.pushNamed(context, 'weightPg');
+    }
+    print(age);
   }
 }

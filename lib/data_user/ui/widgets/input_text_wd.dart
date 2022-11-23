@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
-import 'package:projects_study/palete/palette.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class InputTextWd extends StatelessWidget {
   final String? questionPg;

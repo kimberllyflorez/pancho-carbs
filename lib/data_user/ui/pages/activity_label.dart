@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
 import 'package:projects_study/data_user/ui/widgets/select_button_wd.dart';
+import 'package:projects_study/data_user/ui/widgets/welcome_custom_appbar.dart';
 
-class ActivityLabel extends StatefulWidget {
-  const ActivityLabel({
+class ActivityLabelPg extends StatefulWidget {
+  const ActivityLabelPg({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<ActivityLabel> createState() => _ActivityLabelState();
+  State<ActivityLabelPg> createState() => _ActivityLabelPgState();
 }
 
-class _ActivityLabelState extends State<ActivityLabel> {
+class _ActivityLabelPgState extends State<ActivityLabelPg> {
   late bool women = true;
   late int value;
 
@@ -25,28 +26,30 @@ class _ActivityLabelState extends State<ActivityLabel> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            'Please select your gender',
-            style: TextStyle(
-              fontSize: 30,
-            ),
+          const CustomAppBar(
+            question: 'Please, select your gender',
+          ),
+          Expanded(
+            child: Container(),
           ),
           SelectButtonWd(
             nameButton: 'i do not exercise',
-            funtion: () => selectActivityLabel(0),
+            function: () => selectActivityLabel(0),
             select: value == 0,
           ),
           SelectButtonWd(
             nameButton: ' i do exercise between one to three days a week',
-            funtion: () => selectActivityLabel(1),
+            function: () => selectActivityLabel(1),
             select: value == 1,
           ),
           SelectButtonWd(
             nameButton: 'i do exercise more then three timer a week  ',
-            funtion: () => selectActivityLabel(2),
+            function: () => selectActivityLabel(2),
             select: value == 2,
+          ),
+          Expanded(
+            child: Container(),
           ),
         ],
       ),

@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         'weightPg': (_) => const WeightPg(),
         'heightPg': (_) => const HeightPg(),
         'genderPg': (_) => const GenderPg(),
-        'activity': (_) => const ActivityLabel(),
+        'activity': (_) => const ActivityLabelPg(),
         'home': (_) => const HomePg(),
       },
     );

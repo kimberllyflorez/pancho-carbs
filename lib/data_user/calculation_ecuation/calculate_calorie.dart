@@ -1,7 +1,7 @@
 import 'package:projects_study/data_user/calculation_ecuation/user_data.dart';
 import 'package:projects_study/utils/gender.dart';
 
-import 'constant_ecuation.dart';
+import 'constant_equation.dart';
 
 Future CalculateCalorie() async {
   final repository = UserRepository();
@@ -10,6 +10,7 @@ Future CalculateCalorie() async {
   final geb = gebCal(dataUser);
   final eta = etaCal(geb);
   final get = getCal(eta, dataUser);
+  return get;
 
 }
 gebCal(dataUser) {

@@ -3,9 +3,7 @@ import 'package:projects_study/data_user/helpers/preference_utils.dart';
 import 'package:projects_study/data_user/model/user_data_model.dart';
 import 'package:projects_study/utils/gender.dart';
 
-
 class UserRepository {
-
   Future<UserDataModel> getUser() async {
     double height = await getHeight();
     double weight = await getWeight();
@@ -18,7 +16,6 @@ class UserRepository {
       height: height,
       activityLevel: activity,
       gender: gender,
-
     );
   }
 
@@ -37,10 +34,9 @@ class UserRepository {
     return int.parse(data);
   }
 
-  Future<Gender> getGender( ) async {
+  Future<Gender> getGender() async {
     final gender = await PreferenceUtils.getString(PreferenceConst.gender);
     return gender.gender;
-
   }
 
   Future<int> getLevelActivity() async {
