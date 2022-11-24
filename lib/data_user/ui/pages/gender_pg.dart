@@ -58,7 +58,6 @@ class _GenderPgState extends State<GenderPg> {
   }
 
   Future<void> selectGender(Gender gender) async {
-     CalculateCalorie();
     print(gender.index);
     await PreferenceUtils.setString(PreferenceConst.gender, gender.name);
 

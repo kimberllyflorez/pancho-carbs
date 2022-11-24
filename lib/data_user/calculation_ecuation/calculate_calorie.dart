@@ -14,6 +14,7 @@ class CalculateCalorie {
     final geb = gebValue(dataUser);
     final eta = etaValue(geb);
     final get = getValue(eta, dataUser);
+
     return get;
   }
 }
@@ -26,14 +27,14 @@ gebValue(dataUser) {
         ConstantsCalorieEquation.heightWoman,
         ConstantsCalorieEquation.weightWoman,
         ConstantsCalorieEquation.ageWoman,
-        dataUser);
+        );
   } else {
     geb = baseEquation(
         ConstantsCalorieEquation.constantMan,
         ConstantsCalorieEquation.heightMan,
         ConstantsCalorieEquation.weightMan,
         ConstantsCalorieEquation.ageMan,
-        dataUser);
+        );
   }
   print('CALORIE: ${geb}');
   return geb;
@@ -47,9 +48,13 @@ getValue(eta, dataUser) {
   return eta * dataUser.activity;
 }
 
-baseEquation(constGender, constAge, constHeight, constWeight, dataUser) {
-  (constGender * (constHeight * dataUser.height) +
-      (constWeight * dataUser.weight) -
-      (constAge * dataUser.age)
+double baseEquation(constGender, constHeight, constWeight, constAge) {
+final height = UserRepository().getHeight();
+final weight = UserRepository().getHeight();
+final age = UserRepository().getHeight();
+
+ return (constGender * (constHeight * height) +
+      (constWeight * weight ) -
+      (constAge * age)
   );
 }
