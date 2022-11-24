@@ -12,11 +12,17 @@ class ConstantsCalorieEquation {
   static const eta = 1.1;
 
 
-//todo convertir string to double:
-//  late double weight;
+//todo:  validate if i can use for calculate calories.
+//against delete this proprieties
+
+
+
+// late double weight ;
 //  late double height;
 //  late double age;
 //  late bool gender;
 //  late double activityLevel;
 
 }
+
+

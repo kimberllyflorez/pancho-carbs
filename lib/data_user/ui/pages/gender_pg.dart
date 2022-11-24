@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects_study/data_user/calculation_ecuation/calculate_calorie.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
 import 'package:projects_study/data_user/ui/widgets/popup_validated.dart';
 import 'package:projects_study/data_user/ui/widgets/welcome_custom_appbar.dart';
@@ -57,21 +58,24 @@ class _GenderPgState extends State<GenderPg> {
   }
 
   Future<void> selectGender(Gender gender) async {
-
+     CalculateCalorie();
     print(gender.index);
     await PreferenceUtils.setString(PreferenceConst.gender, gender.name);
 
-    if (gender == Gender.none ) {
+    if (gender == Gender.none) {
       const ValidatedData(
         messageTitle: 'Gender',
         messageSubtitle: 'please, double check to gender',
       );
-    }else{
-      Navigator.pushNamed(context, 'activity');
-
+    } else {
+      navigator();
     }
     setState(() {
       value = gender;
     });
+  }
+
+  void navigator() {
+    Navigator.pushNamed(context, 'activity');
   }
 }

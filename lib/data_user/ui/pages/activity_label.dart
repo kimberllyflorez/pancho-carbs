@@ -57,11 +57,15 @@ class _ActivityLabelPgState extends State<ActivityLabelPg> {
   }
 
   selectActivityLabel(int data) async {
-    Navigator.pushNamed(context, 'home');
+    await Future.delayed(const Duration(seconds: 4));
     await PreferenceUtils.setInt(PreferenceConst.activity, data);
-    print('$PreferenceConst.activity');
+    navigator();
+    print('${PreferenceConst.activity}');
     setState(() {
       value = data;
     });
+  }
+  void navigator(){
+    Navigator.pushNamed(context, 'home');
   }
 }

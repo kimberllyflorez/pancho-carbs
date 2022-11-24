@@ -1,5 +1,5 @@
-import 'package:projects_study/data_user/helpers/preference_const.dart';
-import 'package:projects_study/data_user/helpers/preference_utils.dart';
+import 'package:projects_study/data_user/helpers/preference_data_user/preference_const.dart';
+import 'package:projects_study/data_user/helpers/preference_data_user/preference_utils.dart';
 import 'package:projects_study/data_user/model/user_data_model.dart';
 import 'package:projects_study/utils/gender.dart';
 

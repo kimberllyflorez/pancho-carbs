@@ -74,9 +74,9 @@ class _AgePgState extends State<AgePg> {
 
   Future<void> saveAge(String key, String value) async {
     await PreferenceUtils.setString(key, value);
-    print('age: ${ageController.text}');
 
-    final age = int.tryParse(ageController.text);
+    print('age: ${value}');
+    final age = int.tryParse(value);
 
     if (age == null) {
       showDialog<void>(
@@ -93,9 +93,13 @@ class _AgePgState extends State<AgePg> {
         ),
       );
     } else {
-      //todo: review
-      Navigator.pushNamed(context, 'weightPg');
+      navigator();
     }
     print(age);
   }
+  void navigator(){
+    Navigator.pushNamed(context, 'weightPg');
+  }
+
+
 }

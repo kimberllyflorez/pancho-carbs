@@ -3,37 +3,53 @@ import 'package:projects_study/utils/gender.dart';
 
 import 'constant_equation.dart';
 
-Future CalculateCalorie() async {
-  final repository = UserRepository();
-  final dataUser = await repository.getUser();
+class CalculateCalorie {
+  CalculateCalorie() {
+    dataCalorie();
+  }
 
-  final geb = gebCal(dataUser);
-  final eta = etaCal(geb);
-  final get = getCal(eta, dataUser);
-  return get;
-
-}
-gebCal(dataUser) {
-    if (dataUser.gender == Gender.woman) {
-    final cal = ConstantsCalorieEquation.constantWoman +
-        (ConstantsCalorieEquation.heightWoman * dataUser.height) +
-        (ConstantsCalorieEquation.weightWoman * dataUser.weight) -
-        (ConstantsCalorieEquation.ageWoman * dataUser.age);
-    return cal;
-  } else {
-    final cal = ConstantsCalorieEquation.constantMan +
-        (ConstantsCalorieEquation.heightMan * dataUser.height) +
-        (ConstantsCalorieEquation.weightMan * dataUser.weight) -
-        (ConstantsCalorieEquation.ageMan * dataUser.age);
-    return cal;
+  Future dataCalorie() async {
+    final repository = UserRepository();
+    final dataUser = await repository.getUser();
+    final geb = gebValue(dataUser);
+    final eta = etaValue(geb);
+    final get = getValue(eta, dataUser);
+    return get;
   }
 }
-etaCal (get){
-  final eta = get * ConstantsCalorieEquation.eta;
 
-}
-getCal (eta, dataUser){
-  final geb = eta * dataUser.activity;
-  return geb ;
+gebValue(dataUser) {
+  double geb = 0.0;
+  if (dataUser.gender == Gender.woman) {
+    geb = baseEquation(
+        ConstantsCalorieEquation.constantWoman,
+        ConstantsCalorieEquation.heightWoman,
+        ConstantsCalorieEquation.weightWoman,
+        ConstantsCalorieEquation.ageWoman,
+        dataUser);
+  } else {
+    geb = baseEquation(
+        ConstantsCalorieEquation.constantMan,
+        ConstantsCalorieEquation.heightMan,
+        ConstantsCalorieEquation.weightMan,
+        ConstantsCalorieEquation.ageMan,
+        dataUser);
+  }
+  print('CALORIE: ${geb}');
+  return geb;
 }
 
+etaValue(get) {
+  return get * ConstantsCalorieEquation.eta;
+}
+
+getValue(eta, dataUser) {
+  return eta * dataUser.activity;
+}
+
+baseEquation(constGender, constAge, constHeight, constWeight, dataUser) {
+  (constGender * (constHeight * dataUser.height) +
+      (constWeight * dataUser.weight) -
+      (constAge * dataUser.age)
+  );
+}
