@@ -18,7 +18,7 @@ class CalculateCalorie {
     return get;
   }
 
- double  gebValue(dataUser) {
+  double gebValue(dataUser) {
     double geb = 0.0;
     if (dataUser.gender == Gender.woman) {
       geb = baseEquation(
@@ -49,13 +49,11 @@ class CalculateCalorie {
     return eta * dataUser.activity;
   }
 
-   baseEquation(constGender, constHeight, constWeight, constAge, UserDataModel dataUser) {
-
-
+  double baseEquation(constGender, constHeight, constWeight, constAge,
+      UserDataModel dataUser) {
     return (constGender * (constHeight * dataUser.height) +
-        (constWeight * dataUser.weight ) -
-        (constAge * dataUser.age)
-    );
+        (constWeight * dataUser.weight) -
+        (constAge * dataUser.age));
   }
-}
 
+}

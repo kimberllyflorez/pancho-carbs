@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/data_user/calculation_ecuation/calculate_calorie.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
-import 'package:projects_study/data_user/ui/widgets/popup_validated.dart';
 import 'package:projects_study/data_user/ui/widgets/welcome_custom_appbar.dart';
 import 'package:projects_study/utils/gender.dart';
 

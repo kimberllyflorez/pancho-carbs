@@ -47,33 +47,37 @@ class _WeightPgState extends State<WeightPg> {
               keyValue: PreferenceConst.weight,
             ),
             SaveInfoButton(
-              function: () => saveAndValid(PreferenceConst.weight, weightController.text)
-            ),
+                function: () => saveAndValid(
+                    PreferenceConst.weight, weightController.text)),
           ],
         ),
       ),
     );
   }
-  Future<void> saveAndValid(String key, String value) async {
 
+  Future<void> saveAndValid(String key, String value) async {
     final height = int.tryParse(weightController.text);
 
     if (height == null) {
       showDialog<void>(
         context: context,
         builder: (BuildContext context) =>
-        const ValidatedData(messageTitle: 'Please, enter your height'),
+            const ValidatedData(messageTitle: 'Please, enter your height'),
       );
-    } else if( height > 250){
+    } else if (height > 250) {
       showDialog<void>(
         context: context,
-        builder: (BuildContext context) =>
-        const ValidatedData(messageTitle: 'In your case you must attend a doctor'),
+        builder: (BuildContext context) => const ValidatedData(
+            messageTitle: 'In your case you must attend a doctor'),
       );
-    }else{
+    } else {
       await PreferenceUtils.setString(key, value);
-      Navigator.pushNamed(context, 'heightPg');
+      navigator();
       print(height);
     }
+  }
+
+  void navigator() {
+    Navigator.pushNamed(context, 'heightPg');
   }
 }

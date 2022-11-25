@@ -15,7 +15,7 @@ class _HeightPgState extends State<HeightPg> {
 
   @override
   void initState() {
-    heightController = TextEditingController(text: '');
+    heightController = TextEditingController();
     super.initState();
   }
 
@@ -55,8 +55,8 @@ class _HeightPgState extends State<HeightPg> {
   }
 
   Future<void> save(String key, String value) async {
-    await PreferenceUtils.setString(PreferenceConst.height, value);
-    final height = int.tryParse(heightController.text);
+    await PreferenceUtils.setString(key, value);
+    final height = int.tryParse(value);
     if (height == null) {
       showDialog<void>(
         context: context,
@@ -70,8 +70,12 @@ class _HeightPgState extends State<HeightPg> {
             messageTitle: 'In your case you must attend a doctor'),
       );
     } else {
-      Navigator.pushNamed(context, 'genderPg');
+      navigator();
     }
     print(height);
+  }
+  void navigator (){
+    Navigator.pushNamed(context, 'genderPg');
+
   }
 }
