@@ -2,30 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/preference_data_user/preference_utils.dart';
 import 'package:projects_study/data_user/ui/widgets/popup_validated.dart';
 
-void validatedAge(
-    String key, String value, BuildContext context, String route) {
-  print('age: $value');
-  final age = int.tryParse(value);
-
-  if (age == null) {
+validatedHeight(String key, String value, BuildContext context, String route) {
+  final height = int.tryParse(value);
+  if (height == null) {
     showDialog<void>(
       context: context,
-      builder: (BuildContext context) => const ValidatedData(
-        messageSubtitle: 'enter your age',
-      ),
+      builder: (BuildContext context) =>
+          const ValidatedData(messageTitle: 'Enter you height'),
     );
-  } else if (age <= 18 || age >= 100) {
+  } else if (height <= 20 || height >= 300) {
     showDialog<void>(
       context: context,
       builder: (BuildContext context) => const ValidatedData(
-        messageSubtitle: 'please validated your age ',
+        messageTitle:
+            'Please, double check the value enter in your height if that '
+            'is correct you should attend a professional attention',
       ),
     );
   } else {
     saveData(key, value);
     Navigator.pushNamed(context, route);
   }
-  print(age);
+  print(height);
 }
 
 Future<void> saveData(String key, String value) async {

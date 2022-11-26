@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
+import 'package:projects_study/data_user/helpers/validated_date_user/validated_weight_user.dart';
 import 'package:projects_study/data_user/ui/widgets/appbar_question_wd.dart';
 
 import 'package:projects_study/palette/palette.dart';
@@ -47,37 +48,16 @@ class _WeightPgState extends State<WeightPg> {
               keyValue: PreferenceConst.weight,
             ),
             SaveInfoButton(
-                function: () => saveAndValid(
-                    PreferenceConst.weight, weightController.text)),
+              function: () => validatedWeight(
+                PreferenceConst.weight,
+                weightController.text,
+                context,
+                  'heightPg'
+              ),
+            ),
           ],
         ),
       ),
     );
-  }
-
-  Future<void> saveAndValid(String key, String value) async {
-    final height = int.tryParse(weightController.text);
-
-    if (height == null) {
-      showDialog<void>(
-        context: context,
-        builder: (BuildContext context) =>
-            const ValidatedData(messageTitle: 'Please, enter your height'),
-      );
-    } else if (height > 250) {
-      showDialog<void>(
-        context: context,
-        builder: (BuildContext context) => const ValidatedData(
-            messageTitle: 'In your case you must attend a doctor'),
-      );
-    } else {
-      await PreferenceUtils.setString(key, value);
-      navigator();
-      print(height);
-    }
-  }
-
-  void navigator() {
-    Navigator.pushNamed(context, 'heightPg');
   }
 }

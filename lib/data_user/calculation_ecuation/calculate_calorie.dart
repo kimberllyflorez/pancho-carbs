@@ -5,8 +5,9 @@ import 'package:projects_study/utils/gender.dart';
 import 'constant_equation.dart';
 
 class CalculateCalorie {
+
   CalculateCalorie() {
-    dataCalorie();
+   dataCalorie();
   }
 
   Future dataCalorie() async {
