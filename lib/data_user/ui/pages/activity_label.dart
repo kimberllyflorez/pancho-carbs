@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
+import 'package:projects_study/data_user/helpers/validated_date_user/validate_level_activity.dart';
 import 'package:projects_study/data_user/ui/widgets/select_button_wd.dart';
 import 'package:projects_study/data_user/ui/widgets/welcome_custom_appbar.dart';
 
@@ -24,6 +25,7 @@ class _ActivityLabelPgState extends State<ActivityLabelPg> {
 
   @override
   Widget build(BuildContext context) {
+    const String preferenceKey = PreferenceConst.activity;
     return Scaffold(
       body: Column(
         children: [
@@ -35,18 +37,26 @@ class _ActivityLabelPgState extends State<ActivityLabelPg> {
           ),
           SelectButtonWd(
             nameButton: 'i do not exercise',
-            function: () => selectActivityLabel(0),
+            function: () => validatedActivityUser(
+              0,
+              preferenceKey,
+              navigator(0),
+            ),
             select: value == 0,
           ),
           SelectButtonWd(
             nameButton: ' i do exercise between one to three days a week',
-            function: () => selectActivityLabel(1),
+            function: () => validatedActivityUser(
+              1,
+              preferenceKey,
+              navigator(1),
+            ),
             select: value == 1,
           ),
           SelectButtonWd(
             nameButton: 'i do exercise more then three timer a week  ',
-            function: () => selectActivityLabel(2),
             select: value == 2,
+            function: ()=>validatedActivityUser(2, preferenceKey, navigator(2)),
           ),
           Expanded(
             child: Container(),
@@ -56,16 +66,10 @@ class _ActivityLabelPgState extends State<ActivityLabelPg> {
     );
   }
 
-  selectActivityLabel(int data) async {
-    await Future.delayed(const Duration(seconds: 4));
-    await PreferenceUtils.setInt(PreferenceConst.activity, data);
-    navigator();
-    print('${PreferenceConst.activity}');
+  navigator(int data) {
+    Navigator.pushReplacementNamed(context, 'home');
     setState(() {
       value = data;
     });
-  }
-  void navigator(){
-    Navigator.pushNamed(context, 'home');
   }
 }

@@ -2,10 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
 import 'package:projects_study/utils/gender.dart';
 
-Future<void> selectGender(String key, Gender gender, String value,
-    BuildContext context, Function setState) async {
+validateGender(
+  Gender gender,
+  Gender value,
+  Function? function,
+  BuildContext context,
+) {
   print(gender.index);
-  await PreferenceUtils.setString(PreferenceConst.gender, gender.name);
 
   if (gender == Gender.none) {
     const ValidatedData(
@@ -13,16 +16,12 @@ Future<void> selectGender(String key, Gender gender, String value,
       messageSubtitle: 'please, double check to gender',
     );
   } else {
+    save(PreferenceConst.gender, gender.name);
     Navigator.pushNamed(context, 'activity');
-    save(key, value);
   }
-  setState(() {
-    //value = gender;
-  });
-
+  function;
 }
 
-Future<void> save(String key, String value)async {
+Future save(String key, String value) async {
   await PreferenceUtils.setString(key, value);
-
 }
