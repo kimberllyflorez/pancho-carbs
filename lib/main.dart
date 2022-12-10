@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/provider/get_data_provider.dart';
 import 'package:projects_study/data_user/ui/pages/pages.dart';
+import 'package:projects_study/home/provider/food_items_provider.dart';
 import 'package:projects_study/home/ui/pages/home_pg.dart';
 import 'package:provider/provider.dart';
+
+import 'products/ui/pages/food_tracker.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => GetDataUserProvider()),
+        ChangeNotifierProvider(create: (_)=>FoodItemsProvider()),
       ],
       child: const MyApp(),
     ),
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
         'genderPg': (_) => const GenderPg(),
         'activity': (_) => const ActivityLabelPg(),
         'home': (_) => const HomePg(),
+        'foodTracker':(_)=> const FoodTracker(),
       },
     );
   }
