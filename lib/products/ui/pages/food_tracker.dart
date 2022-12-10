@@ -11,13 +11,8 @@ class FoodTracker extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Food Tracker'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            Text('Food Tracker'),
-            FoodMealTracker(),
-          ],
-        ),
+      body: const SingleChildScrollView(
+        child: FoodMealTracker(),
       ),
     );
   }

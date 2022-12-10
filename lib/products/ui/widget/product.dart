@@ -27,7 +27,7 @@ class Product extends StatelessWidget {
             children: [
               Text(nameProduct),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(serviceSize),
                   Text(unit),
