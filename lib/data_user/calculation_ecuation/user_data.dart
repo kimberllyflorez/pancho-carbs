@@ -21,11 +21,13 @@ class UserRepository {
 
   Future<double> getHeight() async {
     final data = await PreferenceUtils.getString(PreferenceConst.height);
-    return double.parse(data);
+    final value = double.parse(data);
+    return value;
   }
 
   Future<double> getWeight() async {
     final data = await PreferenceUtils.getString(PreferenceConst.weight);
+
     return double.parse(data);
   }
 

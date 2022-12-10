@@ -6,11 +6,12 @@ import 'constant_equation.dart';
 
 class CalculateCalorie {
 
+
   CalculateCalorie() {
-   dataCalorie();
+
   }
 
-  Future dataCalorie() async {
+  Future<double> dataCalorie() async {
     final repository = UserRepository();
     final dataUser = await repository.getUser();
     final geb = gebValue(dataUser);
