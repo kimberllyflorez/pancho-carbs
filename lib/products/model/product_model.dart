@@ -2,8 +2,8 @@
 
 import 'package:projects_study/products/model/nutrients_product_model.dart';
 
-class ProductModel {
-  ProductModel({
+class Product {
+  Product({
     this.id,
     this.code,
     this.imageUrl,
@@ -21,7 +21,7 @@ class ProductModel {
   final String? servingSize;
   final DateTime? addedOn;
 
-  ProductModel copyWith({
+  Product copyWith({
     String? id,
     String? code,
     String? imageUrl,
@@ -30,7 +30,7 @@ class ProductModel {
     String? servingSize,
     DateTime? addedOn,
   }) =>
-      ProductModel(
+      Product(
         id: id ?? this.id,
         code: code ?? this.code,
         imageUrl: imageUrl ?? this.imageUrl,
@@ -40,7 +40,7 @@ class ProductModel {
         addedOn: addedOn ?? this.addedOn,
       );
 
-  factory ProductModel.fromMap(Map<String, dynamic> json) => ProductModel(
+  factory Product.fromMap(Map<String, dynamic> json) => Product(
     code: json["code"],
     imageUrl: json["image_url"],
     nutriments: json["nutriments"] == null || json["nutriments"].isEmpty
@@ -51,7 +51,7 @@ class ProductModel {
     addedOn: json["added_on"],
   );
 
-  factory ProductModel.fromFirebaseMap(Map<dynamic, dynamic> json, String value) => ProductModel(
+  factory Product.fromFirebaseMap(Map<dynamic, dynamic> json, String value) => Product(
     id: value,
     code: json["code"] ?? '',
     imageUrl: json["image_url"] ?? '',

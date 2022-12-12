@@ -6,7 +6,7 @@ import 'package:projects_study/products/model/product_model.dart';class SearchFo
   final int ?page;
   final int ?pageCount;
   final int ?pageSize;
-  final List<ProductModel> products;
+  final List<Product> products;
   final int? skip;
 
   SearchFoodModel({
@@ -26,7 +26,7 @@ import 'package:projects_study/products/model/product_model.dart';class SearchFo
     page: json["page"],
     pageCount: json["page_count"],
     pageSize: json["page_size"],
-    products: json["products"] == null ? [] : List<ProductModel>.from(json["products"].map((x) => ProductModel.fromMap(x))),
+    products: json["products"] == null ? [] : List<Product>.from(json["products"].map((x) => Product.fromMap(x))),
     skip: json["skip"],
   );
 
