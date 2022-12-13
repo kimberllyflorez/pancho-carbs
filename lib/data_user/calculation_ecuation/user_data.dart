@@ -1,6 +1,7 @@
 import 'package:projects_study/data_user/helpers/preference_data_user/preference_const.dart';
 import 'package:projects_study/data_user/helpers/preference_data_user/preference_utils.dart';
 import 'package:projects_study/data_user/model/user_data_model.dart';
+import 'package:projects_study/utils/extensions.dart';
 import 'package:projects_study/utils/gender.dart';
 
 class UserRepository {
@@ -37,8 +38,10 @@ class UserRepository {
   }
 
   Future<Gender> getGender() async {
-    final gender = await PreferenceUtils.getString(PreferenceConst.gender);
-    return gender.gender;
+    final String gender =
+        await PreferenceUtils.getString(PreferenceConst.gender);
+    final data = gender.gender;
+    return data;
   }
 
   Future<int> getLevelActivity() async {

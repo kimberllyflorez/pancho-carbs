@@ -46,7 +46,7 @@ class _HeightPgState extends State<HeightPg> {
               controllerData: heightController,
             ),
             SaveInfoButton(
-              function: () => validatedHeight(
+              function: () => ValidateHeight().validatedHeight(
                 PreferenceConst.height,
                 heightController.text,
                 context,

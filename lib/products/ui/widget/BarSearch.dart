@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/products/provider/search_product_provider.dart';
+import 'package:provider/provider.dart';
 
 class BarSearch extends StatelessWidget {
-  final TextEditingController? controller;
+  final TextEditingController controller;
 
-  const BarSearch({Key? key,  this.controller}) : super(key: key);
+  const BarSearch({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class BarSearch extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 onChanged: (value) {
-
+                  Provider.of<SearchProductProvider>(context, listen: false).getSearchProducts(value);
                 },
                 controller: controller,
                 decoration: InputDecoration(

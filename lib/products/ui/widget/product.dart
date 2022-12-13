@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class Product extends StatelessWidget {
   final String nameProduct;
   final String imageProduct;
-  final String serviceSize;
+  final String? serviceSize;
   final String unit;
-  final String calories;
+  final String ?calories;
 
   const Product({
     Key? key,
     required this.nameProduct,
     required this.imageProduct,
-    required this.serviceSize,
+     this.serviceSize,
     required this.unit,
-    required this.calories,
+     this.calories,
   }) : super(key: key);
 
   @override
@@ -29,9 +29,9 @@ class Product extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(serviceSize),
+                  Text(serviceSize??'9090'),
                   Text(unit),
-                  Text(calories),
+                  Text(calories?? '9090'),
                 ],
               )
             ],

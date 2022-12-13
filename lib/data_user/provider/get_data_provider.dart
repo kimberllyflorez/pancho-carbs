@@ -21,9 +21,11 @@ class GetDataUserProvider extends ChangeNotifier {
 
   Future<void> getCalorieObjective() async {
     calorieObjective = await CalculateCalorie().dataCalorie();
+    notifyListeners();
   }
 
   Future<void> getDataUser() async {
     dataModel = await UserRepository().getUser();
+    notifyListeners();
   }
 }

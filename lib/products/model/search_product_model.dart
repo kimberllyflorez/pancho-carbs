@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-import 'package:projects_study/products/model/product_model.dart';class SearchFoodModel {
+import 'package:projects_study/products/model/product_model.dart';
+
+class SearchProduct {
 
   final int ?count;
   final int ?page;
@@ -9,7 +11,7 @@ import 'package:projects_study/products/model/product_model.dart';class SearchFo
   final List<Product> products;
   final int? skip;
 
-  SearchFoodModel({
+  SearchProduct({
     this.products = const [],
     this.page,
     this.pageCount,
@@ -19,9 +21,9 @@ import 'package:projects_study/products/model/product_model.dart';class SearchFo
   });
 
 
-  factory SearchFoodModel.fromJson(String str) => SearchFoodModel.fromMap(json.decode(str));
+  factory SearchProduct.fromJson(String str) => SearchProduct.fromMap(json.decode(str));
 
-  factory SearchFoodModel.fromMap(Map<String, dynamic> json) => SearchFoodModel(
+  factory SearchProduct.fromMap(Map<String, dynamic> json) => SearchProduct(
     count: json["count"],
     page: json["page"],
     pageCount: json["page_count"],
@@ -30,7 +32,7 @@ import 'package:projects_study/products/model/product_model.dart';class SearchFo
     skip: json["skip"],
   );
 
-  static SearchFoodModel dataMock = SearchFoodModel.fromMap(data);
+  static SearchProduct dataMock = SearchProduct.fromMap(data);
 
   static const data = {
     "count": 10856,

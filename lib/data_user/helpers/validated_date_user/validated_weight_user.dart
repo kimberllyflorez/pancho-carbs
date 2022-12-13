@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects_study/data_user/helpers/preference_data_user/preference_const.dart';
 import 'package:projects_study/data_user/helpers/preference_data_user/preference_utils.dart';
 import 'package:projects_study/data_user/ui/widgets/popup_validated.dart';
 
@@ -30,4 +31,7 @@ void validatedWeight(
 
 Future<void> saveData(String key, String value) async {
   await PreferenceUtils.setString(key, value);
+  final weightcosito =   await PreferenceUtils.getString(key);
+  print('weight cosito: $weightcosito');
+
 }

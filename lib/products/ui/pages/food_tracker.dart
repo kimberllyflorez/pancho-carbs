@@ -1,9 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:projects_study/palette/palette.dart';
-import 'package:projects_study/products/ui/pages/search_product_delegate.dart';
 import 'package:projects_study/products/ui/widget/product.dart';
 
-import 'search_product.dart';
 
 class FoodTracker extends StatelessWidget {
   const FoodTracker({Key? key}) : super(key: key);
@@ -28,6 +27,7 @@ class FoodMealTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       padding: EdgeInsets.only(top: 6),
       margin: EdgeInsets.all(14),
@@ -47,7 +47,7 @@ class FoodMealTracker extends StatelessWidget {
             ),
             child: Column(
               children: [
-              const Product(
+              const Product(//todo lista productos
               nameProduct: 'coca cola',
               serviceSize: '20',
               imageProduct: 'assets/snack.jpg',

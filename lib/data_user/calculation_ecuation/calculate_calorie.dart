@@ -5,12 +5,6 @@ import 'package:projects_study/utils/gender.dart';
 import 'constant_equation.dart';
 
 class CalculateCalorie {
-
-
-  CalculateCalorie() {
-
-  }
-
   Future<double> dataCalorie() async {
     final repository = UserRepository();
     final dataUser = await repository.getUser();
@@ -20,7 +14,7 @@ class CalculateCalorie {
     return get;
   }
 
-  double gebValue(dataUser) {
+  double gebValue(UserDataModel dataUser) {
     double geb = 0.0;
     if (dataUser.gender == Gender.woman) {
       geb = baseEquation(
@@ -43,19 +37,23 @@ class CalculateCalorie {
     return geb;
   }
 
-  double etaValue(get) {
+  double etaValue(double get) {
     return get * ConstantsCalorieEquation.eta;
   }
 
-  double getValue(eta, dataUser) {
-    return eta * dataUser.activity;
+  double getValue(double eta, UserDataModel dataUser) {
+    return eta * dataUser.activityLevel;
   }
 
-  double baseEquation(constGender, constHeight, constWeight, constAge,
-      UserDataModel dataUser) {
+  double baseEquation(
+    double constGender,
+    double constHeight,
+    double constWeight,
+    double constAge,
+    UserDataModel dataUser,
+  ) {
     return (constGender * (constHeight * dataUser.height) +
         (constWeight * dataUser.weight) -
         (constAge * dataUser.age));
   }
-
 }

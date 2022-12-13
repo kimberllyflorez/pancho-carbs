@@ -7,6 +7,7 @@ import 'package:projects_study/products/ui/pages/search_product.dart';
 import 'package:provider/provider.dart';
 
 import 'products/provider/products_provider.dart';
+import 'products/provider/search_product_provider.dart';
 import 'products/ui/pages/food_tracker.dart';
 
 void main() {
@@ -16,6 +17,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => GetDataUserProvider()),
         ChangeNotifierProvider(create: (_)=>FoodItemsProvider()),
         ChangeNotifierProvider(create: (_)=> ProductsProvider()),
+        ChangeNotifierProvider(create: (_)=> SearchProductProvider()),
       ],
       child: const MyApp(),
     ),
