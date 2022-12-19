@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:projects_study/palette/palette.dart';
 
 class Product extends StatelessWidget {
   final String nameProduct;
   final String imageProduct;
   final String? serviceSize;
   final String unit;
-  final String ?calories;
+  final String? calories;
 
   const Product({
     Key? key,
     required this.nameProduct,
     required this.imageProduct,
-     this.serviceSize,
+    this.serviceSize,
     required this.unit,
-     this.calories,
+    this.calories,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      color: Palette.secundary,
       padding: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             children: [
@@ -29,9 +32,9 @@ class Product extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(serviceSize??'9090'),
+                  Text(serviceSize ?? '9090'),
                   Text(unit),
-                  Text(calories?? '9090'),
+                  Text(calories ?? '9090'),
                 ],
               )
             ],
@@ -49,4 +52,3 @@ class Product extends StatelessWidget {
     );
   }
 }
-

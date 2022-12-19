@@ -5,8 +5,13 @@ import 'package:provider/provider.dart';
 
 class BarSearch extends StatelessWidget {
   final TextEditingController controller;
+  final Function(String) function;
 
-  const BarSearch({Key? key, required this.controller}) : super(key: key);
+  const BarSearch({
+    Key? key,
+    required this.controller,
+    required this.function,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +25,7 @@ class BarSearch extends StatelessWidget {
               margin: const EdgeInsets.only(top: 12),
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                onChanged: (value) {
-                  Provider.of<SearchProductProvider>(context, listen: false).getSearchProducts(value);
-                },
+                onChanged: function,
                 controller: controller,
                 decoration: InputDecoration(
                   labelStyle: TextStyle(color: Palette.primary),
@@ -46,4 +49,3 @@ class BarSearch extends StatelessWidget {
     );
   }
 }
-

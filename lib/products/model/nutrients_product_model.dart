@@ -115,8 +115,8 @@ class NutrimentsModel {
     energyServing: checkNumberType(json["energy_serving"]),
     energyUnit: json["energy_unit"] == null ? null : energyUnitValues.map[json["energy_unit"]],
     fat: json["fat"] == null ? null : json["fat"].toDouble(),
-    //fatServing: json["fat_serving"] == null ? null : json["fat_serving"].toDouble(),
-    fatServing: json["fat_serving"]?.toDouble,
+    fatServing: json["fat_serving"] == null ? null : json["fat_serving"].toDouble(),
+    //fatServing: json["fat_serving"]?.toDouble,
     fatUnit: json["fat_unit"] == null ? null : unitValues.map[json["fat_unit"]],
     fiber: json["fiber"] == null ? null : json["fiber"].toDouble(),
     fiberServing: json["fiber_serving"] == null ? null : json["fiber_serving"].toDouble(),
@@ -249,3 +249,4 @@ class NutrimentsModel {
     return value;
   }
 }
+

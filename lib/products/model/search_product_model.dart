@@ -3,11 +3,10 @@ import 'dart:convert';
 import 'package:projects_study/products/model/product_model.dart';
 
 class SearchProduct {
-
-  final int ?count;
-  final int ?page;
-  final int ?pageCount;
-  final int ?pageSize;
+  final int? count;
+  final int? page;
+  final int? pageCount;
+  final int? pageSize;
   final List<Product> products;
   final int? skip;
 
@@ -20,17 +19,20 @@ class SearchProduct {
     this.skip,
   });
 
-
-  factory SearchProduct.fromJson(String str) => SearchProduct.fromMap(json.decode(str));
+  factory SearchProduct.fromJson(String str) =>
+      SearchProduct.fromMap(json.decode(str));
 
   factory SearchProduct.fromMap(Map<String, dynamic> json) => SearchProduct(
-    count: json["count"],
-    page: json["page"],
-    pageCount: json["page_count"],
-    pageSize: json["page_size"],
-    products: json["products"] == null ? [] : List<Product>.from(json["products"].map((x) => Product.fromMap(x))),
-    skip: json["skip"],
-  );
+        count: json["count"],
+        page: json["page"],
+        pageCount: json["page_count"],
+        pageSize: json["page_size"],
+        products: json["products"] == null
+            ? []
+            : List<Product>.from(
+                json["products"].map((x) => Product.fromMap(x))),
+        skip: json["skip"],
+      );
 
   static SearchProduct dataMock = SearchProduct.fromMap(data);
 
@@ -42,7 +44,8 @@ class SearchProduct {
     "products": [
       {
         "code": "8711327373105",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/737/3105/front_en.58.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/737/3105/front_en.58.400.jpg",
         "nutriments": {
           "carbohydrates": 27,
           "carbohydrates_100g": 27,
@@ -97,7 +100,8 @@ class SearchProduct {
       },
       {
         "code": "8712566328352",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/256/632/8352/front_en.151.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/256/632/8352/front_en.151.400.jpg",
         "nutriments": {
           "carbohydrates": 30,
           "carbohydrates_100g": 30,
@@ -167,7 +171,8 @@ class SearchProduct {
       },
       {
         "code": "8712100849084",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/210/084/9084/front_en.100.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/210/084/9084/front_en.100.400.jpg",
         "nutriments": {
           "carbohydrates": 36,
           "carbohydrates_100g": 36,
@@ -221,7 +226,8 @@ class SearchProduct {
       },
       {
         "code": "8711327370708",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/737/0708/front_en.161.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/737/0708/front_en.161.400.jpg",
         "nutriments": {
           "carbohydrates": 25,
           "carbohydrates_100g": 25,
@@ -293,7 +299,8 @@ class SearchProduct {
       },
       {
         "code": "5000159483063",
-        "image_url": "https://images.openfoodfacts.org/images/products/500/015/948/3063/front_en.90.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/500/015/948/3063/front_en.90.400.jpg",
         "nutriments": {
           "carbohydrates": 27,
           "carbohydrates_100g": 27,
@@ -361,7 +368,8 @@ class SearchProduct {
       },
       {
         "code": "8714100635650",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/410/063/5650/front_en.136.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/410/063/5650/front_en.136.400.jpg",
         "nutriments": {
           "carbohydrates": 27,
           "carbohydrates_100g": 27,
@@ -416,13 +424,15 @@ class SearchProduct {
       },
       {
         "code": "00821203",
-        "image_url": "https://images.openfoodfacts.org/images/products/00821203/front_en.3.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/00821203/front_en.3.400.jpg",
         "nutriments": {},
         "product_name": "Prince Polo XXL Smak Orzechowy"
       },
       {
         "code": "5900130030630",
-        "image_url": "https://images.openfoodfacts.org/images/products/590/013/003/0630/front_en.53.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/590/013/003/0630/front_en.53.400.jpg",
         "nutriments": {
           "carbohydrates": 38,
           "carbohydrates_100g": 38,
@@ -490,7 +500,8 @@ class SearchProduct {
       },
       {
         "code": "3415581115017",
-        "image_url": "https://images.openfoodfacts.org/images/products/341/558/111/5017/front_fr.23.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/341/558/111/5017/front_fr.23.400.jpg",
         "nutriments": {
           "carbohydrates": 18.6,
           "carbohydrates_100g": 18.6,
@@ -546,7 +557,8 @@ class SearchProduct {
       },
       {
         "code": "8711327374515",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/737/4515/front_en.99.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/737/4515/front_en.99.400.jpg",
         "nutriments": {
           "carbohydrates": 24,
           "carbohydrates_100g": 24,
@@ -610,7 +622,8 @@ class SearchProduct {
       },
       {
         "code": "8711327371002",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/737/1002/front_en.58.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/737/1002/front_en.58.400.jpg",
         "nutriments": {
           "carbohydrates": 28,
           "carbohydrates_100g": 28,
@@ -668,7 +681,8 @@ class SearchProduct {
       },
       {
         "code": "8714100635674",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/410/063/5674/front_en.97.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/410/063/5674/front_en.97.400.jpg",
         "nutriments": {
           "carbohydrates": 25,
           "carbohydrates_100g": 25,
@@ -733,7 +747,8 @@ class SearchProduct {
       },
       {
         "code": "8711327374256",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/737/4256/front_fr.57.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/737/4256/front_fr.57.400.jpg",
         "nutriments": {
           "carbohydrates": 24,
           "carbohydrates_100g": 24,
@@ -791,7 +806,8 @@ class SearchProduct {
       },
       {
         "code": "1230000022057",
-        "image_url": "https://images.openfoodfacts.org/images/products/123/000/002/2057/front_en.32.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/123/000/002/2057/front_en.32.400.jpg",
         "nutriments": {
           "carbohydrates": 18,
           "carbohydrates_100g": 18,
@@ -851,7 +867,8 @@ class SearchProduct {
       },
       {
         "code": "8711327386334",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/738/6334/front_en.106.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/738/6334/front_en.106.400.jpg",
         "nutriments": {
           "carbohydrates": 28,
           "carbohydrates_100g": 28,
@@ -916,7 +933,8 @@ class SearchProduct {
       },
       {
         "code": "8000920500224",
-        "image_url": "https://images.openfoodfacts.org/images/products/800/092/050/0224/front_en.73.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/800/092/050/0224/front_en.73.400.jpg",
         "nutriments": {
           "carbohydrates": 30,
           "carbohydrates_100g": 30,
@@ -971,12 +989,14 @@ class SearchProduct {
           "sugars_unit": "g",
           "sugars_value": 27
         },
-        "product_name": "Almond Vanilla ice cream coated with milk chocolate and almonds",
+        "product_name":
+            "Almond Vanilla ice cream coated with milk chocolate and almonds",
         "serving_size": "86g"
       },
       {
         "code": "5900130030982",
-        "image_url": "https://images.openfoodfacts.org/images/products/590/013/003/0982/front_en.35.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/590/013/003/0982/front_en.35.400.jpg",
         "nutriments": {
           "alcohol": 0,
           "alcohol_100g": 0,
@@ -1046,7 +1066,8 @@ class SearchProduct {
       },
       {
         "code": "8714100896006",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/410/089/6006/front_fr.38.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/410/089/6006/front_fr.38.400.jpg",
         "nutriments": {
           "carbohydrates": 36,
           "carbohydrates_100g": 36,
@@ -1224,7 +1245,8 @@ class SearchProduct {
       },
       {
         "code": "8711327374904",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/132/737/4904/front_en.115.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/132/737/4904/front_en.115.400.jpg",
         "nutriments": {
           "carbohydrates": 29,
           "carbohydrates_100g": 29,
@@ -1285,7 +1307,8 @@ class SearchProduct {
       },
       {
         "code": "0076840600021",
-        "image_url": "https://images.openfoodfacts.org/images/products/007/684/060/0021/front_fr.138.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/007/684/060/0021/front_fr.138.400.jpg",
         "nutriments": {
           "carbohydrates": 26,
           "carbohydrates_100g": 26,
@@ -1353,7 +1376,8 @@ class SearchProduct {
       },
       {
         "code": "8714100684719",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/410/068/4719/front_fr.78.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/410/068/4719/front_fr.78.400.jpg",
         "nutriments": {
           "carbohydrates": 29,
           "carbohydrates_100g": 29,
@@ -1476,7 +1500,8 @@ class SearchProduct {
       },
       {
         "code": "8714100685273",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/410/068/5273/front_fr.59.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/410/068/5273/front_fr.59.400.jpg",
         "nutriments": {
           "carbohydrates": 27,
           "carbohydrates_100g": 27,
@@ -1544,7 +1569,8 @@ class SearchProduct {
       },
       {
         "code": "8714100658499",
-        "image_url": "https://images.openfoodfacts.org/images/products/871/410/065/8499/front_en.91.400.jpg",
+        "image_url":
+            "https://images.openfoodfacts.org/images/products/871/410/065/8499/front_en.91.400.jpg",
         "nutriments": {
           "carbohydrates": 26,
           "carbohydrates_100g": 26,
@@ -1604,4 +1630,8 @@ class SearchProduct {
     ],
     "skip": 0
   };
+
+  String toString() {
+    return "nameProduct:................. ${this.products}";
+  }
 }

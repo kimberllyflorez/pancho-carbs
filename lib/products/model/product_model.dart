@@ -1,5 +1,3 @@
-
-
 import 'package:projects_study/products/model/nutrients_product_model.dart';
 
 class Product {
@@ -41,34 +39,35 @@ class Product {
       );
 
   factory Product.fromMap(Map<String, dynamic> json) => Product(
-    code: json["code"],
-    imageUrl: json["image_url"],
-    nutriments: json["nutriments"] == null || json["nutriments"].isEmpty
-        ? null
-        : NutrimentsModel.fromMap(json["nutriments"]),
-    productName: json["product_name"].toString(),
-    servingSize: json["serving_size"],
-    addedOn: json["added_on"],
-  );
+        code: json["code"],
+        imageUrl: json["image_url"],
+        nutriments: json["nutriments"] == null || json["nutriments"].isEmpty
+            ? null
+            : NutrimentsModel.fromMap(json["nutriments"]),
+        productName: json["product_name"].toString(),
+        servingSize: json["serving_size"],
+        addedOn: json["added_on"],
+      );
 
-  factory Product.fromFirebaseMap(Map<dynamic, dynamic> json, String value) => Product(
-    id: value,
-    code: json["code"] ?? '',
-    imageUrl: json["image_url"] ?? '',
-    nutriments: json["nutriments"] == null || json["nutriments"].isEmpty
-        ? null
-        : NutrimentsModel.fromFirebaseMap(json["nutriments"]),
-    productName: json["product_name"] ?? '',
-    servingSize: json["serving_size"] ?? '',
-    addedOn: DateTime.parse(json["added_on"]),
-  );
+  factory Product.fromFirebaseMap(Map<dynamic, dynamic> json, String value) =>
+      Product(
+        id: value,
+        code: json["code"] ?? '',
+        imageUrl: json["image_url"] ?? '',
+        nutriments: json["nutriments"] == null || json["nutriments"].isEmpty
+            ? null
+            : NutrimentsModel.fromFirebaseMap(json["nutriments"]),
+        productName: json["product_name"] ?? '',
+        servingSize: json["serving_size"] ?? '',
+        addedOn: DateTime.parse(json["added_on"]),
+      );
 
   Map<String, dynamic> toMap() => {
-    'code': code,
-    'image_url': imageUrl,
-    'nutriments': nutriments?.toMap(),
-    'product_name': productName,
-    'serving_size': servingSize,
-    'added_on': addedOn?.toIso8601String(),
-  };
+        'code': code,
+        'image_url': imageUrl,
+        'nutriments': nutriments?.toMap(),
+        'product_name': productName,
+        'serving_size': servingSize,
+        'added_on': addedOn?.toIso8601String(),
+      };
 }

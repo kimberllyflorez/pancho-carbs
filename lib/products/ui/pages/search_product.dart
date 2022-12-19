@@ -24,27 +24,30 @@ class _SearchProductState extends State<SearchProduct> {
 
   @override
   Widget build(BuildContext context) {
-    final items = SearchProductProvider().products;
+    final items = context.watch<SearchProductProvider>().products;
 
     return Scaffold(
         body: Column(
       children: [
-        BarSearch(controller: controller),
+        BarSearch(
+          controller: controller,
+          function: (controller) {
+            Provider.of<SearchProductProvider>(context, listen: false)
+                .getSearchProducts(controller);
+          },
+        ),
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: items.length,
             itemBuilder: (context, index) {
+              print('ui products ${items[index].productName}');
               return Product(
                 nameProduct: items[index].productName ?? '',
                 imageProduct: items[index].imageUrl ?? '',
-                serviceSize: items[index].nutriments?.energy.toString() ,
+                serviceSize: items[index].nutriments?.energy.toString(),
                 unit: '',
-                calories: items[index].nutriments?.energy100G.toString() ,
-              );
-
-              ListTile(
-                title: Text('${items[index]}'),
+                calories: items[index].nutriments?.energy100G.toString(),
               );
             },
           ),
