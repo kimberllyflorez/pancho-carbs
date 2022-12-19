@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:http/http.dart' as http;
-import 'package:projects_study/products/model/product_model.dart';
-import 'package:projects_study/products/model/search_product_model.dart';
+
+import 'dart:convert' as convert;
 
 class ProductService {
   static const baseUrl = 'world.openfoodfacts.org';
@@ -10,7 +10,7 @@ class ProductService {
   static const action = 'process';
   static const fields = 'product_name,code,image_url,nutriments,serving_size';
 
-  Future<List<Product>> searchProducts(String query) async {
+  Future<Map<String, dynamic>> fetchSearchProducts(String query) async {
     //todo: this entitie get list product
     final url = Uri.https(baseUrl, segment, {
       'action': action,
@@ -22,11 +22,9 @@ class ProductService {
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
-      final data = SearchProduct.fromJson(response.body);
-      print(data);
-      return data.products;
+      return convert.jsonDecode(response.body) as Map<String, dynamic>;
     }
-    return [];
+    return {};
   }
 }
 
