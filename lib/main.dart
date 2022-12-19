@@ -8,16 +8,21 @@ import 'package:provider/provider.dart';
 
 import 'products/provider/products_provider.dart';
 import 'products/provider/search_product_provider.dart';
+import 'products/repository/search_product_service.dart';
 import 'products/ui/pages/food_tracker.dart';
+import 'products/use_case/search_use_case.dart';
 
 void main() {
+  final repositoryProducts = ProductService();
+  final listProductsUseCase = ProductsListUC(repositoryProducts);
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => GetDataUserProvider()),
-        ChangeNotifierProvider(create: (_)=>FoodItemsProvider()),
-        ChangeNotifierProvider(create: (_)=> ProductsProvider()),
-        ChangeNotifierProvider(create: (_)=> SearchProductProvider()),
+        ChangeNotifierProvider(create: (_) => FoodItemsProvider()),
+        ChangeNotifierProvider(create: (_) => ProductsProvider()),
+        ChangeNotifierProvider(
+            create: (_) => SearchProductProvider(listProductsUseCase)),
       ],
       child: const MyApp(),
     ),
@@ -45,8 +50,8 @@ class MyApp extends StatelessWidget {
         'genderPg': (_) => const GenderPg(),
         'activity': (_) => const ActivityLabelPg(),
         'home': (_) => const HomePg(),
-        'foodTracker':(_)=> const FoodTracker(),
-        'searchProduct':(_)=> const SearchProduct()
+        'foodTracker': (_) => const FoodTracker(),
+        'searchProduct': (_) => const SearchProduct()
       },
     );
   }

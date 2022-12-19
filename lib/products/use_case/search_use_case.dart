@@ -1,29 +1,28 @@
 import 'package:projects_study/products/model/product_model.dart';
 import 'package:projects_study/products/model/search_product_model.dart';
-import 'package:projects_study/products/service/search_product_service.dart';
+import 'package:projects_study/products/repository/search_product_service.dart';
 
-abstract class ListSearchProductUseCase {
+abstract class SearchProductUseCase {
+
+  //def de la clase,
   Future<List<Product>> call(String query);
 }
 
-class ProductsListUC implements ListSearchProductUseCase {
+class ProductsListUC implements SearchProductUseCase {
   final ProductService _searchProductService;
 
   ProductsListUC(this._searchProductService);
 
   @override
+  //iplementacion de los metodos de la clase principal.
   Future<List<Product>> call(String query) async {
-    final List<Product> responseSearchProduct = [];
+    List<Product> responseSearchProduct = []; //todo molde almacen de prpduc
     try {
       final response = await _searchProductService.fetchSearchProducts(query);
       final productsSearch = SearchProduct.fromMap(response);
-      final data = productsSearch.products;
-
-      for (var i in data) {
-        responseSearchProduct.add(i);
-      }
-    } catch (mistake) {
-      print(mistake.toString());
+      responseSearchProduct = productsSearch.products;
+    } catch (error) {
+      print(error.toString());
     }
     return responseSearchProduct;
   }

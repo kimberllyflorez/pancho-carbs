@@ -19,8 +19,7 @@ class SearchProduct {
     this.skip,
   });
 
-  factory SearchProduct.fromJson(String str) =>
-      SearchProduct.fromMap(json.decode(str));
+
 
   factory SearchProduct.fromMap(Map<String, dynamic> json) => SearchProduct(
         count: json["count"],

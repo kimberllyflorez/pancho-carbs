@@ -7,7 +7,8 @@ import 'package:projects_study/products/use_case/search_use_case.dart';
 import 'package:projects_study/utils/debounce.dart';
 
 class SearchProductProvider extends ChangeNotifier {
-  final ProductsListUC _listProductsListUC;
+  final SearchProductUseCase _listProductsListUC;
+
   List<Product> products = [];
   bool isLoading = true;
 
