@@ -5,6 +5,7 @@ class PreferenceConst {
   static const gender = 'gender';
   static const activity = 'activity';
   static const termCondition = 'termCondition';
+  static const completedData = 'completedData';
 
 
   //TODO  ASSOCIATED const activity with map activity.

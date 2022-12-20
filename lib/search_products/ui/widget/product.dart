@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class Product extends StatelessWidget {
   final String nameProduct;
@@ -20,7 +20,7 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Palette.secundary,
+      color: PanchoTheme.secundary,
       padding: const EdgeInsets.all(8.0),
       margin: const EdgeInsets.all(8.0),
       child: Row(
@@ -36,7 +36,7 @@ class Product extends StatelessWidget {
                   Text(unit),
                   Text(calories ?? '9090'),
                 ],
-              )
+              ),
             ],
           ),
           ClipRRect(
@@ -44,9 +44,11 @@ class Product extends StatelessWidget {
             child: SizedBox(
               width: 60,
               height: 60,
-              child: Image.asset(imageProduct),
+              child: Image.network(imageProduct),
             ),
           ),
+          IconButton(onPressed: (){}, icon:const  Icon(Icons.add))
+
         ],
       ),
     );

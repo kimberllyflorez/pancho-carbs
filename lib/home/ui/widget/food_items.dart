@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/home/provider/food_items_provider.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 import 'package:provider/provider.dart';
 
 class FoodItems extends StatelessWidget {
@@ -47,7 +47,7 @@ class FoodItem extends StatelessWidget {
       margin: const EdgeInsets.all(14),
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: Palette.secundary,
+        color: PanchoTheme.secundary,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(

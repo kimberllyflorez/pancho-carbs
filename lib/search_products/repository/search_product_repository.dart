@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 import 'dart:convert' as convert;
 
-class ProductService {
+class ProductRepository {
   static const baseUrl = 'world.openfoodfacts.org';
   static const segment = '/cgi/search.pl';
   static const json = true;

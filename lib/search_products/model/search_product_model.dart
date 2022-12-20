@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-import 'package:projects_study/products/model/product_model.dart';
+import 'package:projects_study/search_products/model/product_model.dart';
 
 class SearchProduct {
   final int? count;

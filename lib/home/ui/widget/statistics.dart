@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:projects_study/data_user/provider/get_data_provider.dart';
 
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 import 'package:provider/provider.dart';
 
 class Statistics extends StatelessWidget {
@@ -20,7 +20,7 @@ class Statistics extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Palette.primary,
+        color: PanchoTheme.primary,
       ),
       child: Column(
         children: [
@@ -58,7 +58,7 @@ class CircularCaloriePercent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircularPercentIndicator(
-      center: Text('value'),
+      center:const Text('value'),
       progressColor: Colors.cyanAccent,
       radius: 50,
       percent: 0.3,

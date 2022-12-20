@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:projects_study/products/model/product_model.dart';
+import 'package:projects_study/search_products/model/product_model.dart';
+import 'package:projects_study/search_products/use_case/search_use_case.dart';
 
-import 'package:projects_study/products/use_case/search_use_case.dart';
 import 'package:projects_study/utils/debounce.dart';
 
 class SearchProductProvider extends ChangeNotifier {
@@ -21,8 +21,7 @@ class SearchProductProvider extends ChangeNotifier {
     debounce.value = '';
     debounce.onValue = (value) async {
       if (query.isNotEmpty) {
-        final response = _listProductsListUC.call(query);
-        products = response as List<Product>;
+        products =await  _listProductsListUC.call(query);
         print('entry service$products');
         isLoading = false;
         notifyListeners();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
 import 'package:projects_study/data_user/helpers/validated_date_user/validated_height_user.dart';
 import 'package:projects_study/data_user/ui/widgets/appbar_question_wd.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class HeightPg extends StatefulWidget {
   const HeightPg({Key? key}) : super(key: key);
@@ -35,7 +35,7 @@ class _HeightPgState extends State<HeightPg> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 36,
-                      color: Palette.write,
+                      color: PanchoTheme.write,
                     ),
                   ),
                 ),

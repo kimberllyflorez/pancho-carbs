@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palette/palette.dart';
-import 'package:projects_study/products/provider/search_product_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class BarSearch extends StatelessWidget {
   final TextEditingController controller;
@@ -28,13 +26,13 @@ class BarSearch extends StatelessWidget {
                 onChanged: function,
                 controller: controller,
                 decoration: InputDecoration(
-                  labelStyle: TextStyle(color: Palette.primary),
+                  labelStyle: TextStyle(color: PanchoTheme.primary),
                   filled: false,
-                  hoverColor: Palette.primary,
-                  fillColor: Palette.secundary,
-                  labelText: "What  are you going to eat",
+                  hoverColor: PanchoTheme.primary,
+                  fillColor: PanchoTheme.secundary,
+                  labelText: "What are you going to eat",
                   hintText: "Search",
-                  prefixIcon: Icon(Icons.search, color: Palette.primary),
+                  prefixIcon: Icon(Icons.search, color: PanchoTheme.primary),
                   border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(25.0),

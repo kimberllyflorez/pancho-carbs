@@ -1,7 +1,7 @@
 
 import 'package:flutter/painting.dart';
 
-class Palette{
+class PanchoTheme{
 
   static Color primary= const Color(0xFF7D8ACC);
   static Color secundary = const Color(0xFFD0CCDE);

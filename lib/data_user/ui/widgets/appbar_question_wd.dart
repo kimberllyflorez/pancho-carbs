@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class CustomBackGround extends StatelessWidget {
   final List<Widget> widgets;
@@ -16,7 +16,7 @@ class CustomBackGround extends StatelessWidget {
       clipper: CustomClipPath(),
       child: Container(
         alignment: Alignment.center,
-        color: Palette.primary,
+        color: PanchoTheme.primary,
         width: double.infinity,
         child: Stack(
             children: widgets

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class ValidatedData extends StatelessWidget {
   final String? messageTitle;
@@ -16,7 +16,7 @@ class ValidatedData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Palette.primary,
+      backgroundColor: PanchoTheme.primary,
       title: Text(messageTitle ?? 'Information is entered is not valid'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -32,7 +32,7 @@ class ValidatedData extends StatelessWidget {
           },
           child: Text(
             messageButton ?? 'Understand',
-            style: TextStyle(color: Palette.write),
+            style: TextStyle(color: PanchoTheme.write),
           ),
         ),
       ],

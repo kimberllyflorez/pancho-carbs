@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class SelectButtonWd extends StatelessWidget {
   final String nameButton;
@@ -21,8 +21,8 @@ class SelectButtonWd extends StatelessWidget {
       margin: const EdgeInsets.only(left: 10.0, right: 10.0),
       child: MaterialButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        splashColor: Palette.primary,
-        color: select ? Palette.primary : Colors.white10,
+        splashColor: PanchoTheme.primary,
+        color: select ? PanchoTheme.primary : Colors.white10,
         onPressed: change,
         //select = !select;
         //setState(() {});

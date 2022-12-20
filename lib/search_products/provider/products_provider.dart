@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/products/ui/widget/product.dart';
+import 'package:projects_study/search_products/ui/widget/product.dart';
 
 class ProductsProvider extends ChangeNotifier {
   List<Product> productsLunch = [];

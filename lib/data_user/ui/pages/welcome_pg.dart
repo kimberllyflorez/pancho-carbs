@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projects_study/data_user/ui/widgets/welcome_custom_appbar.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class FirstWelcomePg extends StatelessWidget {
   const FirstWelcomePg({Key? key}) : super(key: key);
@@ -8,7 +8,7 @@ class FirstWelcomePg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Palette.write,
+      backgroundColor: PanchoTheme.write,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -20,7 +20,7 @@ class FirstWelcomePg extends StatelessWidget {
                 'If you want to improve your fysical'
                     ' state \n this is the correct aplication',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, color: Palette.gray),
+                style: TextStyle(fontSize: 18, color: PanchoTheme.gray),
               ),
             ),
             Image.asset('assets/cal.jpg'),
@@ -28,13 +28,13 @@ class FirstWelcomePg extends StatelessWidget {
               onTap: ()=>validatedCondition(context),
               child: Container(
                 decoration: BoxDecoration(
-                    color: Palette.write,
+                    color: PanchoTheme.write,
                     borderRadius: BorderRadius.circular(16)),
                 child: Text(
                   'CONTINUE',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Palette.gray,
+                    color: PanchoTheme.gray,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),

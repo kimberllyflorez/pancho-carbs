@@ -1,4 +1,4 @@
-import 'package:projects_study/products/model/nutrients_product_model.dart';
+import 'package:projects_study/search_products/model/nutrients_product_model.dart';
 
 class Product {
   Product({

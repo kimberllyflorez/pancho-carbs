@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String? question;
@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         width: double.infinity,
-        color: Palette.primary,
+        color: PanchoTheme.primary,
         child: Padding(
           padding:  EdgeInsets.only(
             top:topPadding ?? 60.0,
@@ -29,7 +29,7 @@ class CustomAppBar extends StatelessWidget {
             question ??
             'WELCOME TO \n CALORIE COUNTER ',
             style: TextStyle(
-                color: Palette.write, fontSize: 26,
+                color: PanchoTheme.write, fontSize: 26,
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),

@@ -3,7 +3,7 @@ import 'package:projects_study/data_user/helpers/helpers.dart';
 import 'package:projects_study/data_user/helpers/validated_date_user/validated_weight_user.dart';
 import 'package:projects_study/data_user/ui/widgets/appbar_question_wd.dart';
 
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class WeightPg extends StatefulWidget {
   const WeightPg({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _WeightPgState extends State<WeightPg> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 36,
-                      color: Palette.write,
+                      color: PanchoTheme.write,
                     ),
                   ),
                 ),

@@ -14,6 +14,7 @@ class ActivityLabelPg extends StatefulWidget {
 }
 
 class _ActivityLabelPgState extends State<ActivityLabelPg> {
+  late bool completedData;
   late bool women = true;
   late int value;
 
@@ -70,6 +71,9 @@ class _ActivityLabelPgState extends State<ActivityLabelPg> {
     Navigator.pushReplacementNamed(context, 'home');
     setState(() {
       value = data;
+      completedData = true;
+      
     });
+    
   }
 }

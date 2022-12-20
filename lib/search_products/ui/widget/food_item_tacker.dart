@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/home/provider/food_items_provider.dart';
-import 'package:projects_study/palette/palette.dart';
-import 'package:projects_study/products/ui/widget/product.dart';
-import 'package:provider/provider.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
+import 'package:projects_study/search_products/ui/widget/product.dart';
 
 class FoodMealTracker extends StatelessWidget {
   final String nameFoodTracker;
@@ -29,7 +27,7 @@ class FoodMealTracker extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Palette.secundary,
+              color: PanchoTheme.secundary,
             ),
             child: Column(
               children: [

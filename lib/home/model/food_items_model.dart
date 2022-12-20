@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projects_study/products/model/product_model.dart';
+import 'package:projects_study/search_products/model/product_model.dart';
 
 class FoodItemsModel {
+  int id;
   String image;
   String nameMeal;
   IconData iconButton;
@@ -9,8 +10,9 @@ class FoodItemsModel {
 
   FoodItemsModel({
     this.productsSelected,
-    required  this.iconButton,
-    required  this.image,
-    required  this.nameMeal,
+    required this.id,
+    required this.iconButton,
+    required this.image,
+    required this.nameMeal,
   });
 }

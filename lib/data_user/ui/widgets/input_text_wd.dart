@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
-import 'package:projects_study/palette/palette.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
 class InputTextWd extends StatelessWidget {
   final String? questionPg;
@@ -31,7 +31,7 @@ class InputTextWd extends StatelessWidget {
           ),
         ),
         Container(
-          color: Palette.write,
+          color: PanchoTheme.write,
           padding: const EdgeInsets.only(
             left: 12.0,
             right: 12.0,

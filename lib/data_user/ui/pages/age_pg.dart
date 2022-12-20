@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:projects_study/data_user/helpers/helpers.dart';
 import 'package:projects_study/data_user/helpers/validated_date_user/validated_age_User.dart';
 import 'package:projects_study/data_user/ui/widgets/appbar_question_wd.dart';
+import 'package:projects_study/pancho_theme/pancho_theme.dart';
 
-import 'package:projects_study/palette/palette.dart';
 
 class AgePg extends StatefulWidget {
   const AgePg({super.key});
@@ -44,7 +44,7 @@ class _AgePgState extends State<AgePg> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 36,
-                    color: Palette.write,
+                    color: PanchoTheme.write,
                   ),
                 ),
               )
